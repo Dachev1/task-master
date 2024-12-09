@@ -1,0 +1,139 @@
+/* Navbar */
+.navbar {
+    background: linear-gradient(135deg, #0f172a, #3b82f6);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+/* Navbar Brand */
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.navbar-brand:hover {
+    color: #dbeafe;
+}
+
+.navbar-brand .dot {
+    color: #3b82f6;
+}
+
+/* Navbar Items */
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: #dbeafe;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+.nav-link:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: none;
+    padding: 10px 0;
+    z-index: 10;
+}
+
+.dropdown-item {
+    padding: 8px 15px;
+    font-size: 1rem;
+    color: #1f2937;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background: #3b82f6;
+    color: white;
+    border-radius: 4px;
+}
+
+/* Show dropdown on hover */
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+/* Navbar Buttons */
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    border: none;
+    border-radius: 25px;
+    padding: 8px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Gradient Button */
+.btn-gradient {
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: white;
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.4);
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(79, 70, 229, 0.6);
+}
+
+/* Outline Button */
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #4f46e5;
+    transform: scale(1.05);
+}
