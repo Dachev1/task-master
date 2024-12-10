@@ -1,139 +1,137 @@
-/* Navbar */
+/* Navbar Styling */
 .navbar {
-    background: linear-gradient(135deg, #0f172a, #3b82f6);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
-    z-index: 100;
-    padding: 15px 20px;
+    z-index: 1000;
+    font-family: 'Poppins', sans-serif;
+    padding: 15px 40px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar:hover {
+    background-color: #f4f4f4;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar Container */
+.navbar-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    transition: background 0.3s ease;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Navbar Brand */
-.navbar-brand {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+/* Logo Styling */
+.logo a {
+    font-size: 28px;
+    font-weight: 700;
+    color: #6c63ff;
     text-decoration: none;
-    display: inline-flex;
-    align-items: center;
+    transition: color 0.3s ease;
 }
 
-.navbar-brand:hover {
-    color: #dbeafe;
+.logo a:hover {
+    color: #4b4da9;
 }
 
-.navbar-brand .dot {
-    color: #3b82f6;
-}
-
-/* Navbar Items */
-.navbar-nav {
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 40px;
     list-style: none;
-    display: flex;
-    gap: 25px;
-    margin: 0;
-    padding: 0;
-    flex: 1;
-    justify-content: flex-end;
 }
 
-.nav-item {
-    position: relative;
-}
-
-.nav-link {
-    color: #dbeafe;
-    font-size: 1.1rem;
+.nav-links a {
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-    display: inline-block;
-    padding: 5px 10px;
+    color: #333333;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-.nav-link:hover {
-    color: white;
-    transform: translateY(-2px);
+.nav-links a:hover {
+    color: #6c63ff;
+}
+
+/* Add hover underline effect */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: #6c63ff;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 /* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
 .dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
     background-color: #ffffff;
-    border: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    display: none;
     padding: 10px 0;
-    z-index: 10;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 100;
 }
 
-.dropdown-item {
-    padding: 8px 15px;
-    font-size: 1rem;
-    color: #1f2937;
+.dropdown-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    padding: 10px 20px;
+    white-space: nowrap;
+}
+
+.dropdown-menu li a {
     text-decoration: none;
-    display: block;
-    transition: background 0.3s ease;
+    color: #333333;
+    font-size: 16px;
+    transition: color 0.3s ease;
 }
 
-.dropdown-item:hover {
-    background: #3b82f6;
+.dropdown-menu li a:hover {
+    color: #6c63ff;
+}
+
+/* Contact Button */
+.contact-button {
+    background-color: #6c63ff;
     color: white;
-    border-radius: 4px;
-}
-
-/* Show dropdown on hover */
-.nav-item:hover .dropdown-menu {
-    display: block;
-}
-
-/* Navbar Buttons */
-.nav-buttons {
-    display: flex;
-    gap: 15px;
-}
-
-.btn {
     border: none;
     border-radius: 25px;
-    padding: 8px 20px;
-    font-size: 1rem;
-    font-weight: bold;
+    padding: 10px 20px;
     cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Gradient Button */
-.btn-gradient {
-    background: linear-gradient(135deg, #6366f1, #4f46e5);
-    color: white;
-    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.4);
-}
-
-.btn-gradient:hover {
-    background: linear-gradient(135deg, #4f46e5, #6366f1);
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(79, 70, 229, 0.6);
-}
-
-/* Outline Button */
-.btn-outline {
-    border: 2px solid white;
-    color: white;
-    background: transparent;
-}
-
-.btn-outline:hover {
-    background: white;
-    color: #4f46e5;
+.contact-button:hover {
+    background-color: #5a54d1;
     transform: scale(1.05);
 }
