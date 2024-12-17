@@ -6,14 +6,14 @@ const Footer = () => (
         sx={{
             textAlign: 'center',
             py: 2,
-            backgroundColor: '#f4f4f4',
+            backgroundColor: '#6c63ff',
             position: 'fixed',
             bottom: 0,
             width: '100%',
             borderTop: '1px solid #ddd',
         }}
     >
-        <Typography variant="body2" color="textSecondary">
+        <Typography variant="body2" color="#fff">
             &copy; 2024 TaskMaster. All rights reserved.
         </Typography>
     </Box>

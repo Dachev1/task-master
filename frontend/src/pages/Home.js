@@ -7,6 +7,12 @@ import Footer from '../components/Footer';
 import '../assets/styles/Home.css';
 import banner from '../assets/images/banner.png';
 
+const features = [
+    { title: 'Smart Task Management', description: 'Boost productivity and simplify your work.' },
+    { title: 'Seamless Collaboration', description: 'Work seamlessly with your team.' },
+    { title: 'Insightful Analytics', description: 'Track progress and make data-driven decisions.' },
+];
+
 const Home = () => {
     useEffect(() => {
         AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
@@ -24,8 +30,12 @@ const Home = () => {
                         Organize, collaborate, and analyze with ease. TaskMaster helps you achieve your goals faster.
                     </Typography>
                     <Box className="button-container" data-aos="fade-up" data-aos-delay="400">
-                        <Button variant="contained" color="primary">Get Started</Button>
-                        <Button variant="outlined" color="secondary">Learn More</Button>
+                        <Button variant="contained" size="large" className="hero-button" color="primary">
+                            Get Started
+                        </Button>
+                        <Button variant="outlined" size="large" className="hero-button" color="secondary">
+                            Learn More
+                        </Button>
                     </Box>
                 </Box>
                 <Box className="hero-image-container" data-aos="zoom-in">
@@ -33,10 +43,10 @@ const Home = () => {
                 </Box>
             </Box>
             <Box className="features-container">
-                {['Smart Task Management', 'Seamless Collaboration', 'Insightful Analytics'].map((title, index) => (
-                    <Box className="feature-card" data-aos="fade-up" data-aos-delay={index * 200} key={title}>
-                        <Typography variant="h6" color="primary">{title}</Typography>
-                        <Typography variant="body1">Boost productivity and simplify your work.</Typography>
+                {features.map((feature, index) => (
+                    <Box className="feature-card" data-aos="fade-up" data-aos-delay={index * 200} key={feature.title}>
+                        <Typography variant="h6">{feature.title}</Typography>
+                        <Typography variant="body1">{feature.description}</Typography>
                     </Box>
                 ))}
             </Box>

@@ -1,61 +1,61 @@
 .navbar-toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .navbar-logo {
-    width: 40px;
-    height: 40px;
-    color: #6c63ff;
-    transition: transform 0.3s ease;
-  }
-  
-  .navbar-logo:hover {
-    transform: scale(1.1);
-  }
-  
-  .navbar-logo-link {
-    text-decoration: none;
-  }
-  
-  .navbar-links {
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  .navbar-link {
-    color: #6c63ff;
-    font-weight: 500;
-    font-size: 1rem;
-    padding: 0.6rem 1.5rem;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-    background-color: transparent;
-    border: 2px solid transparent;
-  }
-  
-  .navbar-link:hover {
-    color: #ffffff;
-    background-color: #6c63ff;
-    border-color: #5a54d1;
-    transform: scale(1.05);
-  }
-  
-  .navbar-signup-button {
-    font-size: 1.1rem;
-    border-radius: 30px;
-    padding: 0.7rem 2rem;
-    text-transform: none;
-    font-weight: bold;
-    background: linear-gradient(90deg, #6c63ff, #5a54d1);
-    color: white;
-    transition: all 0.3s ease;
-  }
-  
-  .navbar-signup-button:hover {
-    background: linear-gradient(90deg, #5a54d1, #6c63ff);
-    transform: scale(1.05);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.1);
+}
+
+.navbar-logo-link {
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-link {
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  background-color: transparent;
+  color: white;
+  transition: all 0.4s ease, box-shadow 0.3s ease;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.navbar-link:hover {
+  background-color: white;
+  color: #6c63ff;
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-signup-button {
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 0.7rem 2rem;
+  text-transform: none;
+  background: linear-gradient(90deg, #5a54d1, #6c63ff);
+  color: white;
+  transition: all 0.4s ease, box-shadow 0.3s ease;
+}
+
+.navbar-signup-button:hover {
+  background-color: white;
+  color: #6c63ff;
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}

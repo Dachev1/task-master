@@ -8,14 +8,14 @@ import '../assets/styles/Navbar.css';
 const Navbar = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration
+      duration: 1000,
       easing: 'ease-in-out',
-      once: true, 
+      once: true,
     });
   }, []);
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#f9f9f9', boxShadow: 'none' }}>
+    <AppBar position="static" sx={{ backgroundColor: 'primary.main', boxShadow: 'none' }}>
       <Toolbar className="navbar-toolbar">
         <Box>
           <Link to="/" className="navbar-logo-link" data-aos="fade-down">
@@ -36,18 +36,17 @@ const Navbar = () => {
           </Link>
         </Box>
         <Box className="navbar-links">
-          <Button className="navbar-link" data-aos="fade-down" data-aos-delay="200">
-            About
-          </Button>
-          <Button className="navbar-link" data-aos="fade-down" data-aos-delay="300">
-            Features
-          </Button>
-          <Button className="navbar-link" data-aos="fade-down" data-aos-delay="400">
-            Contact
-          </Button>
-          <Button className="navbar-link" data-aos="fade-down" data-aos-delay="500">
-            Log In
-          </Button>
+          {['About', 'Features', 'Contact', 'Log In'].map((text, index) => (
+            <Button
+              key={text}
+              className="navbar-link"
+              color="secondary"
+              data-aos="fade-down"
+              data-aos-delay={`${200 + index * 100}`}
+            >
+              {text}
+            </Button>
+          ))}
           <Button
             variant="contained"
             color="primary"

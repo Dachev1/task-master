@@ -9,11 +9,9 @@ import './assets/styles/global.css';
 
 const App = () => (
     <ThemeProvider theme={theme}>
-        {/* Applies global baseline styles */}
         <CssBaseline />
         <Router>
             <Routes>
-                {/* Define application routes */}
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
