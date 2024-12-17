@@ -1,33 +1,47 @@
-import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import "./../assets/styles/Home.css";
-import homePageImage from "./../assets/images/homePage.png"; // Import the image
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { Box, Typography, Button } from '@mui/material';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import '../assets/styles/Home.css';
+import banner from '../assets/images/banner.png';
 
 const Home = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+    }, []);
+
     return (
-        <div className="home-container">
+        <>
             <Navbar />
-            <main className="hero-section">
-                <div className="hero-content">
-                    <div className="hero-text">
-                        <h1>Landing Page for Developers & Startups</h1>
-                        <p>
-                            Beautifully designed templates using React.js, Ant Design, and Styled Components!
-                            Save weeks of time and build your landing page in minutes.
-                        </p>
-                        <div className="cta-buttons">
-                            <button className="explore-btn">Explore</button>
-                            <button className="learn-more-btn">Learn More</button>
-                        </div>
-                    </div>
-                    <div className="hero-image">
-                        <img src={homePageImage} alt="Landing Page Illustration" />
-                    </div>
-                </div>
-            </main>
+            <Box className="hero-section">
+                <Box className="hero-content">
+                    <Typography variant="h1" className="hero-title" data-aos="fade-up">
+                        Redefine How You Work with <span className="highlight">TaskMaster</span>
+                    </Typography>
+                    <Typography variant="body1" className="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                        Organize, collaborate, and analyze with ease. TaskMaster helps you achieve your goals faster.
+                    </Typography>
+                    <Box className="button-container" data-aos="fade-up" data-aos-delay="400">
+                        <Button variant="contained" color="primary">Get Started</Button>
+                        <Button variant="outlined" color="secondary">Learn More</Button>
+                    </Box>
+                </Box>
+                <Box className="hero-image-container" data-aos="zoom-in">
+                    <img src={banner} alt="TaskMaster Productivity" className="hero-image" />
+                </Box>
+            </Box>
+            <Box className="features-container">
+                {['Smart Task Management', 'Seamless Collaboration', 'Insightful Analytics'].map((title, index) => (
+                    <Box className="feature-card" data-aos="fade-up" data-aos-delay={index * 200} key={title}>
+                        <Typography variant="h6" color="primary">{title}</Typography>
+                        <Typography variant="body1">Boost productivity and simplify your work.</Typography>
+                    </Box>
+                ))}
+            </Box>
             <Footer />
-        </div>
+        </>
     );
 };
 
